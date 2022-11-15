@@ -54,6 +54,7 @@ namespace LoginAplication
                 txtpass.Clear();
             }
             //Se eliminaron algunos archivos innecesarios
+            //Se ajustaron algunos cambios
         }
     }
 }
