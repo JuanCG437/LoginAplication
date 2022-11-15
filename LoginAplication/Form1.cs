@@ -12,6 +12,9 @@ namespace LoginAplication
 
         public Form1()
         {
+            //Para habilitar la conexion con la base de datos
+            conexion.Open();
+
             InitializeComponent();
         }
 
@@ -23,9 +26,7 @@ namespace LoginAplication
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            //Para habilitar la conexion con la base de datos
-            conexion.Open();
-
+            
             //Comando que hace la consulta a la base de datos
             SqlCommand cmd = new SqlCommand("SELECT USUARIO, PASSWORD FROM TBLPERSONA WHERE USUARIO =@user AND PASSWORD =@pass", conexion);
 
@@ -45,6 +46,12 @@ namespace LoginAplication
                 Principal pantalla = new Principal();
                 pantalla.Show();
                 this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("usuario  incorrecto");
+                txtuser.Clear();
+                txtpass.Clear();
             }
             //Se eliminaron algunos archivos innecesarios
         }
