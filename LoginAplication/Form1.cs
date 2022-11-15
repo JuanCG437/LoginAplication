@@ -46,7 +46,7 @@ namespace LoginAplication
                 pantalla.Show();
                 this.Hide();
             }
-
+            //Se eliminaron algunos archivos innecesarios
         }
     }
 }
